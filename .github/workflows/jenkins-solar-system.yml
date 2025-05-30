@@ -6,6 +6,11 @@ on:
     branches:
       - 'branch-b'
 
+env:
+    MONGO_URI: 'mongodb+srv://supercluster.d83jj.mongodb.net/superData'  #added
+    MONGO_USERNAME: superuser                                            #added 
+    MONGO_PASSWORD: SuperPassword                                        #added
+
 jobs:
     unit-testing:
         runs-on: ubuntu-latest
@@ -21,7 +26,5 @@ jobs:
         - name: Install Dependencies
           run: npm install --no-audit
 
-        - name: Unit Testing    #added
-          run: npm test         #added
-
-
+        - name: Unit Testing
+          run: npm test
